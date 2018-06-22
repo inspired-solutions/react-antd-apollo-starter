@@ -42,7 +42,7 @@ yarn dev
 ### Commands
 
 * `yarn build` generate compile files on `./dist` folder
-* `yarn dev` starts server in development mode on [http://localhost:4000]()
+* `yarn dev` starts server in development mode on [http://localhost:4000](http://localhost:4000)
 * `yarn test` run jest form tests (`*.test.js` or `*.spec.js` or in `__test__` directory)
 
 > **Note**: We recommend that you're using **yarn** to install packages from packages.json and **npm** to install global packages like **yarn**
