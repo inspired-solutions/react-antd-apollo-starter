@@ -33,7 +33,7 @@ cd react-antd-starter
 # 3. Install dependencies
 yarn
 
-# 4. Start server (runs on http://localhost:4000)
+# 4. Start server (runs on [http://localhost:4000](http://localhost:4000))
 yarn dev
 ```
 
