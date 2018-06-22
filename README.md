@@ -5,15 +5,14 @@
 ![](https://tomas.piestansky.cz/static/ant-menu-hero-53d994835d83a2613df8013ae9537376-61a4d.png)
 
 <div align="center"><strong>🚀 Bootstrap your React Ant Design App in seconds</strong></div>
-<div align="center">Basic starter kit for a flexible GraphQL server for Node.js - based on best practices from the GraphQL community.</div>
+<div align="center">Basic starter kit for a React and Ant Design Application - based on best practices from the React community.</div>
 
 ## Features
 
-- **Scalable GraphQL server:** The server uses [`apollo-server v2`](https://github.com/apollographql/apollo-server) which is based on new Apollo Server
-- **GraphQL database:** Includes GraphQL database binding to [Prisma](https://www.prisma.io) (running on MySQL)
-- **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
-- **Extensible**: Simple and flexible [data model](./database/types.graphql) – easy to adjust and extend
-- **No configuration overhead**: Preconfigured [`graphql-config`](https://github.com/prisma/graphql-config) setup
+- **Webpack 4:** Includes configuration for production and development mode
+- **Ant Design Components** Includes integration with Ant Design Components
+- **Extensible**: Simple and flexible – easy to adjust and extend
+- **No configuration overhead**: Preconfigured [`webpack.config.babel.js`](./webpack.config.babel.js) and [`webpack.config.dev.babel.js`](./webpack.config.dev.babel.js)
 
 For a fully-fledged **GraphQL & Node.js tutorial**, visit [How to GraphQL](https://www.howtographql.com/graphql-js/0-introduction/). You can more learn about the idea behind GraphQL boilerplates [here](https://blog.graph.cool/graphql-boilerplates-graphql-create-how-to-setup-a-graphql-project-6428be2f3a5).
 
