@@ -14,7 +14,7 @@ class App extends Component {
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
           <p>
-            Powered by <a href="http://inspiredsolutions.pe">Inspired Solutions</a>
+            Powered by <a href="http://inspiredsolutions.pe" target="_blank">Inspired Solutions</a>
           </p>
         </Layout.Content>
       </Layout>
