@@ -28,7 +28,7 @@ npm i -g yarn
 git clone git@github.com:inspired-solutions/react-antd-starter.git
 
 # 2. Navigate to the new project
-cd react-and-starter
+cd react-antd-starter
 
 # 3. Start server (runs on http://localhost:4000)
 yarn dev
