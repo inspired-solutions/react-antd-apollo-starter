@@ -13,6 +13,9 @@ class App extends Component {
           <p>
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
+          <p>
+            Powered by <a href="http://inspiredsolutions.pe">Inspired Solutions</a>
+          </p>
         </Layout.Content>
       </Layout>
     )
