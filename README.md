@@ -14,8 +14,6 @@
 - **Extensible**: Simple and flexible – easy to adjust and extend
 - **No configuration overhead**: Preconfigured [`webpack.config.babel.js`](./webpack.config.babel.js) and [`webpack.config.dev.babel.js`](./webpack.config.dev.babel.js)
 
-For a fully-fledged **GraphQL & Node.js tutorial**, visit [How to GraphQL](https://www.howtographql.com/graphql-js/0-introduction/). You can more learn about the idea behind GraphQL boilerplates [here](https://blog.graph.cool/graphql-boilerplates-graphql-create-how-to-setup-a-graphql-project-6428be2f3a5).
-
 ## Requirements
 
 You need to have the [Yarn](https://github.com/graphql-cli/graphql-cli) installed to bootstrap your React and Ant Design App using `yarn install`
