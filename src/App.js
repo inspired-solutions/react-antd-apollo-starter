@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 import { Layout } from 'antd'
 import './App.scss'
+import client from './graphql'
+import { ApolloProvider } from 'react-apollo'
+import ExchangeRates from './ExchangeRates'
 
 class App extends Component {
   render() {
     return (
-      <Layout style={{height: '150px', padding: '20px', textAlign: 'center'}}>
+      <Layout style={{height: 'auto', padding: '20px', textAlign: 'center'}}>
         <Layout.Content>
           <h1>
-            Wellcome to React Ant Design Starter
+            Wellcome to React Ant Design Apollo Starter
           </h1>
+          <ApolloProvider client={client}>
+            <ExchangeRates></ExchangeRates>
+          </ApolloProvider>
           <p>
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
