@@ -14,7 +14,7 @@ class App extends Component {
             Wellcome to React Ant Design Apollo Starter
           </h1>
           <ApolloProvider client={client}>
-            <ExchangeRates></ExchangeRates>
+            <ExchangeRates />
           </ApolloProvider>
           <p>
             To get started, edit <code>src/App.js</code> and save to reload.
