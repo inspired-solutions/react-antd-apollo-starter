@@ -11,7 +11,7 @@ class ExchangeRates extends Component {
 
     return(
       <Query
-      query={ratesUSD}
+        query={ratesUSD}
       >
         {({ loading, error, data }) => {
           const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
