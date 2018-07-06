@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Layout } from 'antd'
-import './App.scss'
 import client from './graphql'
 import { ApolloProvider } from 'react-apollo'
 import ExchangeRates from './ExchangeRates'

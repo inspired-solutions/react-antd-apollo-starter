@@ -1,5 +1,15 @@
-import React from 'react'
-import { render } from 'react-dom'
-import App from './App'
+import './App.scss'
 
-render(<App />, document.getElementById('root'))
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import { ApolloProvider } from 'react-apollo'
+
+import App from './App'
+import { AUTH_TOKEN, TOKEN_KEY } from './config/auth'
+import client from './graphql'
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)

@@ -18,7 +18,9 @@
     "graphql-tag": "^2.9.2",
     "react": "^16.4.1",
     "react-apollo": "^2.1.7",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
