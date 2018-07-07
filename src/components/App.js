@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import AppLayout from './Layout'
 import Home from './Home'
@@ -22,13 +22,15 @@ const ProtectedRoutes = (props) => (
 )
 
 const App = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/login" component={Login} />
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/login" component={Login} />
 
-    <Route path="/app/" component={ProtectedRoutes} />
-    <Route component={NotFound} />
-  </Switch>
+      <Route path="/app/" component={ProtectedRoutes} />
+      <Route component={NotFound} />
+    </Switch>
+  </BrowserRouter>
 )
 
 export default App
