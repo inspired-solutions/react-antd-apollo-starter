@@ -1,0 +1,53 @@
+@import '../../node_modules/antd/dist/antd.css';
+
+// Put your custom css above
+.not-found {
+  font-size: 46px;
+  line-height: 54px;
+  text-align: center;
+  margin: 64px 24px;
+}
+
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+  text-align: center;
+  color: #fff;
+  line-height: 31px;
+}
+
+.app-layout {
+  .app-content {
+    margin: 24px 50px 0;
+    background: #fff;
+    padding: 24px;
+  }
+}
+
+.home-content {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.login-content {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  min-height: 280px;
+}
+
+.login-form__remember{
+  float: left;
+}
+
+.login-form__forgot{
+  float: right;
+}
+
+.login-form__button{
+  width: 100%;
+}

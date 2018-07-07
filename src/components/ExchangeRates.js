@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import { Query } from 'react-apollo'
-import ratesUSD from './queries/rates'
 import { Select, Spin, Icon, Alert } from 'antd'
 
-const Option = Select.Option
+import ratesUSD from '../queries/rates'
 
+const Option = Select.Option
 
 class ExchangeRates extends Component {
   render(){
 
-    return(
+    return (
       <Query
         query={ratesUSD}
       >
         {({ loading, error, data }) => {
           const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
           if (loading) return (
-            <Spin indicator={antIcon}/>
+            <div style={{ textAlign: 'center' }}>
+              <Spin indicator={antIcon}/>
+            </div>
           )
 
           if (error) return (
@@ -35,7 +37,7 @@ class ExchangeRates extends Component {
               size='default'
               defaultValue="Select your currency"
               onChange={handleChange}
-              style={{ width: 200 }}
+              style={{ width: '100%' }}
             >
               {rates}
             </Select>

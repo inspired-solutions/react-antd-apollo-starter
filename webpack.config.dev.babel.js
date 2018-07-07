@@ -6,6 +6,7 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
+    publicPath: "/",
     filename: '[name]-[hash].bundle.js'
   },
   module: {
@@ -35,6 +36,7 @@ module.exports = {
     })
   ],
   devServer: {
+    historyApiFallback: true,
     inline: true,
     port: 4000
   }

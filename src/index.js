@@ -1,15 +1,18 @@
-import './App.scss'
+import './styles/App.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
+import { BrowserRouter } from 'react-router-dom'
 
-import App from './App'
-import client from './graphql'
+import App from './components/App'
+import client from './utils/graphql'
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <BrowserRouter>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 )
