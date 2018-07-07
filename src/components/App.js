@@ -15,9 +15,7 @@ const NotFound = () => (
 
 const ProtectedRoutes = (props) => (
   <Protected {...props}>
-    <Switch>
-      <Route path={`${props.match.url}/dashboard`} component={Dashboard} />
-    </Switch>
+    <Route path={`${props.match.url}/dashboard`} component={Dashboard} />
   </Protected>
 )
 

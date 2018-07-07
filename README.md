@@ -38,6 +38,13 @@ yarn
 yarn dev
 ```
 
+## Configuring
+
+```sh
+# 1. Install eslint and babel-eslint
+npm install eslint babel-eslint -g
+```
+
 ## Documentation
 
 ### Commands
@@ -53,13 +60,15 @@ yarn dev
 | File name 　　　　　　　　　　　　　　| Description 　　　　　　　　<br><br>| 
 | :--  | :--         |
 | `└── src/ `  | _Contains all files that are related to the React and Ant Design Application_ |\
+| `　　├── components/` | _Contains all components_ |
+| `　　　　├── App.js` | React Application |
+| `　　　　├── ExchangeRates.js` | Component test using Query component from Apollo |
+| `　　├── config/` | _Contains config files_ |
 | `　　├── queries/ ` | _Contains all query files that you will use_ |
-| `　　　　├── rates.js` | Define query for rates |
-| `　　├── App.js` | React Application |
-| `　　├── App.scss` | Main Styles |
-| `　　├── App.test.js` | Test for the Application |
-| `　　├── ExchangeRates.js` | Component test using Query component from Apollo |
-| `　　├── graphql.js` | Create your Apollo Client |
+| `　　├── styles/ ` | _Contains all styles_ |
+| `　　├── tests/` | _Contains all tests for the Application_ |
+| `　　├── utils/` | _Contains utilities_ |
+| `　　　　├── graphql.js` | Create your Apollo Client |
 | `　　├── index.js` | Main file related to Webpack |
 | `　　├── index.pug` | Main Template |
 | `├── .babelrc` | Config for Babel |
