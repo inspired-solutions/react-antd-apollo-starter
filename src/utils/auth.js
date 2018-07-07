@@ -1,7 +1,8 @@
+import store from 'store'
 import { AUTH_TOKEN } from '../config/auth'
 
 export const getToken = () => {
-  return localStorage.getItem(AUTH_TOKEN)
+  return store.get(AUTH_TOKEN)
 }
 
 export const isAuth = () => {

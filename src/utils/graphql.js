@@ -1,22 +1,20 @@
-import {
-  ApolloClient,
-  ApolloLink,
-  HttpLink,
-  InMemoryCache
-} from 'apollo-boost'
+import store from 'store'
+import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from 'apollo-boost'
 
 import { AUTH_TOKEN, TOKEN_KEY } from '../config/auth'
 
-const httpLink = new HttpLink({ uri: "https://w5xlvm3vzz.lp.gql.zone/graphql" })
+const httpLink = new HttpLink({ uri: 'https://w5xlvm3vzz.lp.gql.zone/graphql' })
 
 const middlewareAuthLink = new ApolloLink((operation, forward) => {
-  const authToken = localStorage.getItem(AUTH_TOKEN)
+  const authToken = store.get(AUTH_TOKEN)
   const authorizationHeader = authToken ? `${TOKEN_KEY} ${authToken}` : null
+
   operation.setContext({
     headers: {
-      authorization: authorizationHeader,
-    },
+      authorization: authorizationHeader
+    }
   })
+
   return forward(operation)
 })
 
