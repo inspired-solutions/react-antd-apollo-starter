@@ -1,7 +1,8 @@
+import store from 'store'
 import { AUTH_TOKEN } from '../config/auth'
 
 export const getToken = () => {
-  return localStorage.getItem(AUTH_TOKEN)
+  return store.get(AUTH_TOKEN)
 }
 
 export const isAuth = () => {
@@ -13,22 +14,11 @@ export const getUser = () => {
 }
 
 export const logout = () => {
-  localStorage.removeItem(AUTH_TOKEN)
+  store.remove(AUTH_TOKEN)
   return true
 }
 
 export const login = (data) => {
-  localStorage.setItem(AUTH_TOKEN, data.key)
-  localStorage.setItem('user', JSON.stringify(data.user))
-}
-
-export const post = (LOGIN_URL, data) => {
-  return fetch(LOGIN_URL, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  });
+  store.set(AUTH_TOKEN, data.key)
+  store.set('user', JSON.stringify(data.user))
 }

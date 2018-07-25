@@ -32,7 +32,6 @@ const logoutLink = onError(({ graphQLErrors, networkError }) => {
     const [error] = graphQLErrors
 
     if (error.code === 401) {
-      // console.log('foo')
       logout()
     }
   }
