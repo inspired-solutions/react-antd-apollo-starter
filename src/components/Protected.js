@@ -15,15 +15,4 @@ const Protected = (props) => isAuth() ? (
     <Unauthorized />
   )
 
-class _Protected extends Component {
-  render () {
-    console.log(this.props)
-    console.log(this.props.children)
-
-    return (
-      <div>Foo</div>
-    )
-  }
-}
-
 export default Protected
