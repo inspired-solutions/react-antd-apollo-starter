@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Form, Icon, Input, Button, Checkbox } from 'antd'
+import { Form, Icon, Input, Button, Checkbox, message as antdMessage } from 'antd'
+import { Mutation } from 'react-apollo'
 
 import AppLayout from './Layout'
-import { isAuth } from '../utils/auth'
+import { isAuth, login } from '../utils/auth'
+import { LOGIN } from '../mutations/auth'
 
 const FormItem = Form.Item
 
@@ -15,58 +17,62 @@ class Login extends Component {
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = (e, doLogin) => {
     e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values)
+
+    const { username, password } = e.target
+
+    doLogin({
+      variables: {
+        username: username.value,
+        password: password.value,
       }
     })
   }
 
+  onCompleted(data) {
+    login(data.login)
+    this.props.history.push('/')
+  }
+
+  onError(error) {
+    error.graphQLErrors && error.graphQLErrors.map(({ message }, i) => antdMessage.error(message))
+  }
+
   render () {
-    // console.log(this.props);
-
-    const { getFieldDecorator } = this.props.form
-
     return (
       <AppLayout>
         <div className="login-content">
-          <Form onSubmit={this.handleSubmit}>
-            <FormItem>
-              {getFieldDecorator('userName', {
-                rules: [{ required: true, message: 'Enter your username' }],
-              })(
-                <Input size="large" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-              )}
-            </FormItem>
-            <FormItem>
-              {getFieldDecorator('password', {
-                rules: [{ required: true, message: 'Enter your password' }],
-              })(
-                <Input size="large" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-              )}
-            </FormItem>
-            <FormItem>
-              {getFieldDecorator('remember', {
-                valuePropName: 'checked',
-                initialValue: false,
-              })(
-                <Checkbox className="login-form__remember">Remember me</Checkbox>
-              )}
-              <a className="login-form__forgot" href="">Forgot my password</a>
-            </FormItem>
-            <FormItem>
-              <Button size="large" type="primary" htmlType="submit" className="login-form__button">
-                Login
-              </Button>
-            </FormItem>
-          </Form>
+          <Mutation
+            mutation={LOGIN}
+            onCompleted={(data) => this.onCompleted(data)}
+            onError={(error) => this.onError(error)}
+          >
+            {(doLogin, { loading, error, data }) => (
+              <Form onSubmit={(e) => this.handleSubmit(e, doLogin)}>
+                <h2>Login</h2>
+                <FormItem>
+                  <Input size="large" name="username" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                </FormItem>
+                <FormItem>
+                  <Input size="large" name="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                </FormItem>
+                <FormItem>
+                  <Checkbox className="login-form__remember">Remember me</Checkbox>
+                  <a className="login-form__forgot" href="">Forgot my password</a>
+                </FormItem>
+                <FormItem>
+                  <Button size="large" type="primary" htmlType="submit" className="login-form__button" disabled={loading}>
+                    Login
+                  </Button>
+                </FormItem>
+              </Form>
+            )}
+          </Mutation>
         </div>
       </AppLayout>
-
     )
   }
 }
 
-export default Form.create()(Login)
+export default Login

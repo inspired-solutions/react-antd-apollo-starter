@@ -6,11 +6,11 @@ import Footer from './Footer'
 
 const AppLayout = ({ children }) => (
   <Layout className="app-layout">
-    <Header/>
+    <Header />
     <Layout.Content className="app-content">
       {children}
     </Layout.Content>
-    <Footer/>
+    <Footer />
   </Layout>
 )
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import AppLayout from './Layout'
 import Home from './Home'
@@ -15,7 +15,10 @@ const NotFound = () => (
 
 const ProtectedRoutes = (props) => (
   <Protected {...props}>
-    <Route path={`${props.match.url}/dashboard`} component={Dashboard} />
+    <Switch>
+      <Route path={`${props.match.url}/dashboard`} component={Dashboard} />
+      <Route component={NotFound} />
+    </Switch>
   </Protected>
 )
 

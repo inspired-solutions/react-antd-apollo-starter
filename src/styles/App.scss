@@ -19,26 +19,45 @@
   line-height: 31px;
 }
 
-.app-layout {
-  .app-content {
-    margin: 24px 50px 0;
-    background: #fff;
-    padding: 24px;
+#root {
+  height: 100%;
+
+  .app-layout {
+    height: 100%;
+
+    .ant-layout-header {
+      .user {
+        float: right;
+        text-align: center;
+        color: #fff;
+        margin-top: -1px;
+      }
+    }
+
+    .app-content {
+      margin: 24px 50px 0;
+      background: #fff;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
   }
 }
 
-.home-content {
+/*.home-content {
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
-}
+}*/
 
-.login-content {
+/*.login-content {
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
   min-height: 280px;
-}
+}*/
 
 .login-form__remember{
   float: left;

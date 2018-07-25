@@ -6,7 +6,9 @@ import {
 } from 'apollo-boost'
 import { onError } from '../../node_modules/apollo-link-error'
 
-import { AUTH_TOKEN, TOKEN_KEY, URI } from '../config/auth'
+import { URI } from '../config/app'
+import { AUTH_TOKEN, TOKEN_KEY } from '../config/auth'
+import { logout } from './auth'
 
 const httpLink = new HttpLink({ uri: URI })
 
@@ -21,9 +23,18 @@ const middlewareAuthLink = new ApolloLink((operation, forward) => {
   return forward(operation)
 })
 
-const logoutLink = onError(( networkError ) => {
-  if (networkError.statusCode === 401) {
-    logout()
+const logoutLink = onError(({ graphQLErrors, networkError }) => {
+
+  console.log(graphQLErrors, networkError)
+  console.log(networkError ? networkError.statusCode : 'None')
+
+  if (graphQLErrors && graphQLErrors.length) {
+    const [error] = graphQLErrors
+
+    if (error.code === 401) {
+      // console.log('foo')
+      logout()
+    }
   }
 })
 
